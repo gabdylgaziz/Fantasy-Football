@@ -1,0 +1,75 @@
+.login {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.log_btns {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.log_btns img {
+  width: 215px;
+  height: 45px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(100, 85, 95, 0.5);
+
+}
+
+.rectangle {
+  width: 1152px;
+  height: 250px;
+  background: linear-gradient(to right, rgb(100, 103, 140), rgb(175, 155, 165));
+  justify-content: center;
+  align-items: center;
+  margin-left: 144px;
+  margin-bottom: 100px;
+  color: white;
+}
+
+.rec_txt p{
+  font-family: 'Bebas Neue';
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 84px;
+  display: flex;
+  align-items: center;
+  margin-left: 150px;
+}
+
+.ff_logo{
+  display: flex;
+  flex-direction: column;
+}
+
+.ff_logo img{
+  width: 180px;
+  margin-top: -250px;
+  margin-left: 880px;
+}
+
+#rec_play {
+  color: rgb(16, 35, 87);
+}
+
+.sign_btn {
+  background: linear-gradient(to right, rgb(107, 142, 217), rgb(124, 113, 208),  rgb(133, 102, 150));
+  border: none;
+  text-decoration: none;
+  color: white;
+  padding: 15px 60px;
+  position: absolute;
+  cursor: pointer;
+  margin-left: 880px;
+  border-radius: 20px;
+  margin-top: -60px;
+}

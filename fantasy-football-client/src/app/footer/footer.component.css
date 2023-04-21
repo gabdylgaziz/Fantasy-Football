@@ -1,0 +1,28 @@
+.foot_rec {
+  width: 1440px;
+  height: 250px;
+  background: linear-gradient(to right, rgb(50, 6, 58), rgb(78, 17, 68), rgb(107, 27, 80));
+  color: 	rgb(233, 220, 201);
+  word-spacing: 5px;
+  text-decoration: none;
+}
+
+.foot1 {
+  line-height: 39px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.foot2 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+  word-spacing: 5px;
+}
+
+.foot2 a {
+  text-decoration: none;
+  color: rgb(233, 220, 201);
+}
