@@ -3,5 +3,5 @@
 Project members:
 
 Zhagypar Gabdylgaziz
-Saparov Aldiyar
+Saparov Aldiar
 Nurmagambetkyzy Riza
