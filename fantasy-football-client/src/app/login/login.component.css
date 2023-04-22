@@ -73,6 +73,12 @@
   margin-left: 880px;
   border-radius: 20px;
   margin-top: -60px;
+  transition: 500ms;
+}
+
+.sign_btn:hover{
+  background: linear-gradient(to right, rgb(215, 10, 177), rgb(124, 113, 208),  rgb(144, 121, 177));
+  color: black;
 }
 
 .mlogin{
