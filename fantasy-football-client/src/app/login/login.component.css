@@ -1,6 +1,7 @@
 .login {
   display: flex;
   margin-bottom: 20px;
+  margin-top: 20px;
   justify-content: center;
   align-items: center;
   color: white;
@@ -72,4 +73,54 @@
   margin-left: 880px;
   border-radius: 20px;
   margin-top: -60px;
+}
+
+.mlogin{
+  height: 150px;
+  width: 100%;
+  background: linear-gradient(to right, #673861, #451a43);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sign-text{
+  color: white;
+  font-size: 34px;
+}
+
+.mlogin form{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.input-field {
+	border: 0;
+	background-color: white;
+	border-bottom: 2px solid #73bffa; 
+  height: 100%;
+  width: 350px;
+	font-size: 15px;
+  padding-left: 10px;
+  color: rgb(66, 66, 66);
+	padding: .25rem 0;
+	&:focus, &:valid {
+		outline: 0;
+		border-bottom-color: #6658d3;
+		&+.input-label {
+			color: #73bffa;
+		}
+	}
+}
+
+.action-button {
+	font-size: 1.25rem;
+	padding: 10px 90px;
+	width: 100%;
+	font-weight: 500;
+	background: linear-gradient(to right, rgb(255, 255, 255), #f0acad, #f48289);
+	border-radius: 15px;
+	color: #FFF;
+	border: 0;
 }

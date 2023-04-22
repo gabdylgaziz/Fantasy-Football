@@ -1,11 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
-<<<<<<< HEAD
 body{
     padding: 0;
     margin: 0;
 }
-=======
 * {
   margin: 0;
   padding: 0;
@@ -85,4 +83,3 @@ body {
   height: 200px;
   background: linear-gradient(to right, rgb(50, 6, 58), rgb(78, 17, 68), rgb(107, 27, 80));
 } */
->>>>>>> 24b1356edd9bd1d6ebde7ae9b194ae89f8bed16f
