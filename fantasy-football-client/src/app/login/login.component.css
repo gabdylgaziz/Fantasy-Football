@@ -27,7 +27,7 @@
 }
 
 .rectangle {
-  width: 1152px;
+  width: 81%;
   height: 250px;
   background: linear-gradient(to right, rgb(100, 103, 140), rgb(175, 155, 165));
   justify-content: center;

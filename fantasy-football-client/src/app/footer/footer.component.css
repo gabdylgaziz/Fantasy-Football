@@ -1,8 +1,39 @@
 .footer {
   width: 100%;
-  height: 250px;
-  background: linear-gradient(to right, rgb(50, 6, 58), rgb(78, 17, 68), rgb(107, 27, 80));
+  height: 80px;
+  background: #cbdbf2;
   color: 	rgb(233, 220, 201);
   word-spacing: 5px;
   text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
 }
+
+li{
+  list-style: none;
+  margin-right: 20px;
+  font-size: 15px;
+  color: #474980;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+a{
+  text-decoration: none;
+  color: #474980;
+  letter-spacing: none;
+}
+
+a:visited{
+  color: #474980;
+}
+
+.footer ul{
+  display: flex;
+  align-items: center;
+}
+
+
