@@ -35,9 +35,10 @@ li:hover{
 }
 
 .right .text{
-    font-size: 72px;
+    font-size: 120px;
     color: white;
     margin-bottom: 30px;
+    font-family: 'Bebas Neue';
 }
 
 .header{
