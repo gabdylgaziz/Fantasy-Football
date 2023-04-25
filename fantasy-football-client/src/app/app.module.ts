@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { ToptableComponent } from './toptable/toptable.component';
 import { NewsComponent } from './news/news.component';
 import { FooterComponent } from './footer/footer.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     ToptableComponent,
     NewsComponent,
-    FooterComponent
+    FooterComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
