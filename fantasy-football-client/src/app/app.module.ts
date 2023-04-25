@@ -10,6 +10,8 @@ import { NewsComponent } from './news/news.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { FantasyComponent } from './fantasy/fantasy.component';
+import { MainpageComponent } from './mainpage/mainpage.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FantasyComponent } from './fantasy/fantasy.component';
     NewsComponent,
     FooterComponent,
     SignupFormComponent,
-    FantasyComponent
+    FantasyComponent,
+    MainpageComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
