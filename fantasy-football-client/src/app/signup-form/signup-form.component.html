@@ -1,9 +1,9 @@
 <div class="header">
     <ul>
-    <li><img src="assets\images\logo.svg"></li>
-    <li>Home</li>
-    <li>Fantasy</li>
-    <li>Account</li>
+        <li routerLink="/"><img src="assets\images\logo.svg"></li>
+        <li routerLink="/">Home</li>
+        <li routerLink="/fantasy">Fantasy</li>
+        <li routerLink="/account">Account</li>
     </ul>
 </div>
 
@@ -347,7 +347,8 @@
             </ul>
         </form>
         <div class="next-button">
-            <button (click)="nextstep()">NEXT</button>
+            <button (click)="nextstep()" *ngIf="!sign">NEXT</button>
+            <button *ngIf="sign" routerLink="/">NEXT</button>
             <button (click)="prevstep()" *ngIf="sign">PREV</button>
         </div>
     </div>
