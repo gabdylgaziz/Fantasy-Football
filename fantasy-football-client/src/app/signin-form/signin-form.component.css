@@ -1,0 +1,139 @@
+li{
+    list-style: none;
+    cursor: pointer;
+    font-size: 24px;
+    color:#0c225a;
+}
+
+li:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    background-color: #ececec;
+    display: flex;
+    align-items: center;
+}
+
+.header ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.header img{
+    width: 100px;
+}
+
+.signup{
+    height: 100vh;
+    width: 100%;
+    background-color: #e0e0e0;
+}
+
+.purple-div{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.purple{
+    width: 80%;
+    height: 50px;
+    color: white;
+    background-color: #491d46;
+    display: flex;
+    align-items: center;
+    padding: 0 1%;
+    font-weight: 600;
+}
+
+.sign-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.reg-text{
+    width: 350px;
+    display: flex;
+}
+
+input[type=text], input[type=password]{
+    height: 40px;
+    width: 350px;
+    border: none;
+    outline: none;
+    padding: 0 5px;
+}
+
+
+.next-button{
+    width: 60%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.next-button button{
+    background-color: white;
+    color: #491d46;
+    border: none;
+    padding: 10px 45px;
+    
+}
+
+.form{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: #491d46;
+}
+
+.footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-text{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #491d46;
+}
+
+.login-form{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+

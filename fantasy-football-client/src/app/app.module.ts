@@ -12,6 +12,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { FantasyComponent } from './fantasy/fantasy.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { AccountComponent } from './account/account.component';
+import { SigninFormComponent } from './signin-form/signin-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AccountComponent } from './account/account.component';
     SignupFormComponent,
     FantasyComponent,
     MainpageComponent,
-    AccountComponent
+    AccountComponent,
+    SigninFormComponent
   ],
   imports: [
     BrowserModule,
