@@ -107,6 +107,7 @@ input[type=text], input[type=password], input[type=date], .form-select{
     color: white;
     border: none;
     padding: 10px 45px;
+    cursor: pointer;
 }
 
 .footer{

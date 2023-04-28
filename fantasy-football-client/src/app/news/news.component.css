@@ -34,7 +34,11 @@
 }
 
 .body{
-  width: 80%;
+  width: 100%;
+}
+
+#news_p3 {
+  width: 99%;
 }
 
 a h2{

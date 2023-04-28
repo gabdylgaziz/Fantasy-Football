@@ -7,9 +7,8 @@ li{
 
 li:hover{
     text-decoration: underline;
-    color: black;
+    color: rgb(49, 20, 72);
 }
-
 
 .main{
     display: flex;
@@ -72,4 +71,7 @@ li:hover{
 .team-list {
     width: 100%;
     display: flex;
+    width: 145px;
+    height: 100px;
+    justify-content: center;
 }

@@ -1,8 +1,8 @@
 li{
-    list-style: none;
-    cursor: pointer;
-    font-size: 24px;
-    color:#678c39;
+  list-style: none;
+  cursor: pointer;
+  font-size: 24px;
+  color:  rgb(49, 20, 72);
 }
 
 .header li:hover{

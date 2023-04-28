@@ -109,6 +109,7 @@ li{
     background-color: #491d46;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 
@@ -125,7 +126,6 @@ li{
 
 .date {
   display: flex;
-
 }
 
 input[type=text], input[type=password], input[type=date], .form-select{
@@ -135,6 +135,7 @@ input[type=text], input[type=password], input[type=date], .form-select{
   outline: none;
   padding: 0 5px;
 }
+
 
 .gender{
   display: flex;
@@ -203,6 +204,7 @@ input[type=text], input[type=password], input[type=date], .form-select{
   background-color: #491d46;
   color: white;
   border: none;
+  cursor: pointer;
 }
 
 .cancel_btn button{
@@ -210,4 +212,5 @@ input[type=text], input[type=password], input[type=date], .form-select{
   background-color: #491d46;
   color: white;
   border: none;
+  cursor: pointer;
 }
