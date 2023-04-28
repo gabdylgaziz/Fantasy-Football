@@ -5,6 +5,7 @@ import { FantasyComponent } from './fantasy/fantasy.component';
 import { AccountComponent } from './account/account.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { SigninFormComponent } from './signin-form/signin-form.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'fantasy', component: FantasyComponent},
   {path: 'account', component: AccountComponent},
   {path: 'signup', component: SignupFormComponent},
-  {path: 'signin', component: SigninFormComponent}
+  {path: 'signin', component: SigninFormComponent},
+  {path: 'main', component: MainPageComponent}
 ];
 
 @NgModule({

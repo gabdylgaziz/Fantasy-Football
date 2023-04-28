@@ -13,6 +13,8 @@ import { FantasyComponent } from './fantasy/fantasy.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { AccountComponent } from './account/account.component';
 import { SigninFormComponent } from './signin-form/signin-form.component';
+import { News2Component } from './news2/news2.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { SigninFormComponent } from './signin-form/signin-form.component';
     LoginComponent,
     ToptableComponent,
     NewsComponent,
+    News2Component,
     FooterComponent,
     SignupFormComponent,
     FantasyComponent,
     MainpageComponent,
     AccountComponent,
-    SigninFormComponent
+    SigninFormComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

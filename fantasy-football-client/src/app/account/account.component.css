@@ -2,10 +2,14 @@ li{
     list-style: none;
     cursor: pointer;
     font-size: 24px;
+    
+}
+
+.header li{
     color:#0c225a;
 }
 
-li:hover{
+.header li:hover{
     text-decoration: underline;
     color: black;
 }
@@ -54,6 +58,55 @@ li:hover{
     font-weight: 600;
 }
 
+.name{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
 
+.prof-img{
+    background-color: white;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
 
+.name{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
 
+.name p{
+    font-size: 25px;
+}
+
+.profile-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.info-li{
+    display: flex;
+    gap: 10px;
+}
+
+.li-holder{
+    width: 150px;
+    margin-right: 50px;
+}
+
+.li-text{
+    width: 200px;
+}
+
+.update-button button{
+    padding: 15px 32px;
+    background-color: #491d46;
+    color: white;
+    border: none;
+}

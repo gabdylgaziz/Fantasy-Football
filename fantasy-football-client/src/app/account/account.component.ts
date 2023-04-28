@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent {
+  update: boolean;
+  constructor(){
+    this.update = false;
+  }
 
+  isUpdate(){
+    this.update = true;
+  }
 }
