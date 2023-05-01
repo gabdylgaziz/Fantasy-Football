@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from '../user';
 
 @Component({
   selector: 'app-signup-form',
@@ -7,8 +8,10 @@ import { Component } from '@angular/core';
 })
 export class SignupFormComponent {
   sign: boolean;
+  user: User[];
   constructor() {
     this.sign = false;
+    this.user = [];
   }
 
   nextstep(){
@@ -18,5 +21,15 @@ export class SignupFormComponent {
   prevstep(){
     this.sign = false;
   }
+
+  onSubmit(name: string,surname: string,email: string,password: string,date: string,){
+    console.log(name)
+    console.log(surname)
+    console.log(email)
+    console.log(password)
+    console.log(date)
+  }
+
+
 
 }
