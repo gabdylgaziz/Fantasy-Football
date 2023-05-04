@@ -1,11 +1,11 @@
 <div class="mlogin">
-  <form class="card-form">
+  <form class="card-form" (submit)="onSubmit(email.value, password.value)">
     <div class="sign-text">SIGN-IN</div>
     <div class="input">
-      <input type="text" class="input-field" placeholder="e-mail/phone number"/>
+      <input type="text" #email class="input-field" placeholder="e-mail/phone number"/>
     </div>
     <div class="input">
-      <input type="password" class="input-field" placeholder="password"/>
+      <input type="password" #password class="input-field" placeholder="password"/>
     </div>
     <div class="action">
       <button class="action-button">sign-in</button>
