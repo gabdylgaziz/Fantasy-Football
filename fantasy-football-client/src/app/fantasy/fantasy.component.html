@@ -12,32 +12,33 @@
         <div class="pitch">
             <div class="pitch-back">
                 <div class="players goalkeepers">
-                    <div class="player goalkeeper"><img src="../../assets/images/fantasy/goalkeeper.webp"><button>Add Goalkeeper</button></div>
-                    <div class="player goalkeeper"><img src="../../assets/images/fantasy/goalkeeper.webp"><button>Add Goalkeeper</button></div>
+                    <div class="player goalkeeper"><img src="../../assets/images/fantasy/goalkeeper.webp"><button (click)="change('GK')">Add Goalkeeper</button></div>
+                    <div class="player goalkeeper"><img src="../../assets/images/fantasy/goalkeeper.webp"><button (click)="change('GK')">Add Goalkeeper</button></div>
                 </div>
                 <div class="players defenders">
-                    <div class="player defender"><img src="../../assets/images/fantasy/player.webp"><button>Add Defender</button></div>
-                    <div class="player defender"><img src="../../assets/images/fantasy/player.webp"><button>Add Defender</button></div>
-                    <div class="player defender"><img src="../../assets/images/fantasy/player.webp"><button>Add Defender</button></div>
-                    <div class="player defender"><img src="../../assets/images/fantasy/player.webp"><button>Add Defender</button></div>
-                    <div class="player defender"><img src="../../assets/images/fantasy/player.webp"><button>Add Defender</button></div>
+                    <div class="player defender"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('DF')">Add Defender</button></div>
+                    <div class="player defender"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('DF')">Add Defender</button></div>
+                    <div class="player defender"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('DF')">Add Defender</button></div>
+                    <div class="player defender"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('DF')">Add Defender</button></div>
+                    <div class="player defender"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('DF')">Add Defender</button></div>
                 </div>
                 <div class="players midfielders">
-                    <div class="player midfielder"><img src="../../assets/images/fantasy/player.webp"><button>Add Midfielder</button></div>
-                    <div class="player midfielder"><img src="../../assets/images/fantasy/player.webp"><button>Add Midfielder</button></div>
-                    <div class="player midfielder"><img src="../../assets/images/fantasy/player.webp"><button>Add Midfielder</button></div>
-                    <div class="player midfielder"><img src="../../assets/images/fantasy/player.webp"><button>Add Midfielder</button></div>
-                    <div class="player midfielder"><img src="../../assets/images/fantasy/player.webp"><button>Add Midfielder</button></div>
+                    <div class="player midfielder"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('MF')">Add Midfielder</button></div>
+                    <div class="player midfielder"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('MF')">Add Midfielder</button></div>
+                    <div class="player midfielder"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('MF')">Add Midfielder</button></div>
+                    <div class="player midfielder"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('MF')">Add Midfielder</button></div>
+                    <div class="player midfielder"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('MF')">Add Midfielder</button></div>
                 </div>
                 <div class="players forwards">
-                    <div class="player forward"><img src="../../assets/images/fantasy/player.webp"><button>Add Forward</button></div>
-                    <div class="player forward"><img src="../../assets/images/fantasy/player.webp"><button>Add Forward</button></div>
-                    <div class="player forward"><img src="../../assets/images/fantasy/player.webp"><button>Add Forward</button></div>
+                    <div class="player forward"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('FW')">Add Forward</button></div>
+                    <div class="player forward"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('FW')">Add Forward</button></div>
+                    <div class="player forward"><img src="../../assets/images/fantasy/player.webp"><button (click)="change('FW')">Add Forward</button></div>
                 </div>
             </div>
 
             <div class="butt">
                 <button>Enter Squad</button>
+                <button (click)="reset()">Reset Filter</button>
             </div>
         </div>
         <div class="games">
@@ -129,155 +130,85 @@
     <div class="right">
         <div class="players-table-div">
             <ul class="players-table">
-                <li class="section">
+                <li class="section" *ngIf="type == 'None' || type == 'GK'">
                     <div class="player-table">
                         <div class="head">
                             <p>Goalkeepers</p>
                         </div>
                         <div class="body">
-                            <ul class="players-ul">
+                            <ul class="players-ul" *ngFor="let player of GK;">
                                 <li class="player-li">
                                     <div>
-                                        <img src="../../assets/images/fantasy/yellow_goalk_shirt.webp">
+                                        <img [src]="player.src">
                                     </div>
                                     <div>
-                                        Ramsdale
+                                        {{player.name}}
                                     </div>
-                                    <div>4.9</div>
-                                    <div>119</div>
-                                </li>
-                                <li class="player-li">
-                                    <div>
-                                        <img src="../../assets/images/fantasy/blue_goalk_shirt.webp">
-                                    </div>
-                                    <div>
-                                        Pope
-                                    </div>
-                                    <div>5.4</div>
-                                    <div>134</div>
-                                </li>
-                                <li class="player-li">
-                                    <div>
-                                        <img src="../../assets/images/fantasy/purple_goalk_shirt.webp">
-                                    </div>
-                                    <div>
-                                        Alisson
-                                    </div>
-                                    <div>5.4</div>
-                                    <div>132</div>
+                                    <div>{{player.cost}}</div>
+                                    <div>{{player.rating}}</div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </li>
-                <li class="section">
+                <li class="section" *ngIf="type == 'None' || type == 'DF'">
                     <div class="player-table">
                         <div class="head">
                             <p>Defenders</p>
                         </div>
                         <div class="body">
-                            <ul class="players-ul">
+                            <ul class="players-ul" *ngFor="let player of DF;">
                                 <li class="player-li">
                                     <div>
-                                        <img src="../../assets/images/fantasy/striped_shirt.webp">
+                                        <img [src]="player.src">
                                     </div>
                                     <div>
-                                        Trippier
+                                        {{player.name}}
                                     </div>
-                                    <div>6.2</div>
-                                    <div>173</div>
-                                </li>
-                                <li class="player-li">
-                                    <div>
-                                        <img src="../../assets/images/fantasy/red_white_shirt.webp">
-                                    </div>
-                                    <div>
-                                        White
-                                    </div>
-                                    <div>5.0</div>
-                                    <div>139</div>
+                                    <div>{{player.cost}}</div>
+                                    <div>{{player.rating}}</div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </li>
-                <li class="section">
+                <li class="section" *ngIf="type == 'None' || type == 'MF'">
                     <div class="player-table">
                         <div class="head">
                             <p>Midfielders</p>
                         </div>
                         <div class="body">
-                            <ul class="players-ul">
+                            <ul class="players-ul" *ngFor="let player of MF;">
                                 <li class="player-li">
                                     <div>
-                                        <img src="../../assets/images/fantasy/red_shirt.webp">
+                                        <img [src]="player.src">
                                     </div>
                                     <div>
-                                        Salah
+                                        {{player.name}}
                                     </div>
-                                    <div>13.0</div>
-                                    <div>187</div>
-                                </li>
-                                <li class="player-li">
-                                    <div>
-                                        <img src="../../assets/images/fantasy/blue_shirt.webp">
-                                    </div>
-                                    <div>
-                                        De Bruyne
-                                    </div>
-                                    <div>12.1</div>
-                                    <div>159</div>
-                                </li>
-                                <li class="player-li">
-                                    <div>
-                                        <img src="../../assets/images/fantasy/blue_shirt.webp">
-                                    </div>
-                                    <div>
-                                        Eze
-                                    </div>
-                                    <div>5.6</div>
-                                    <div>125</div>
+                                    <div>{{player.cost}}</div>
+                                    <div>{{player.rating}}</div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </li>
-                <li class="section">
+                <li class="section" *ngIf="type == 'None' || type == 'FW'">
                     <div class="player-table">
                         <div class="head">
                             <p>Forwards</p>
                         </div>
                         <div class="body">
-                            <ul class="players-ul">
+                            <ul class="players-ul" *ngFor="let player of FW;">
                                 <li class="player-li">
                                     <div>
-                                        <img src="../../assets/images/fantasy/blue_shirt.webp">
+                                        <img [src]="player.src">
                                     </div>
                                     <div>
-                                        Haaland
+                                        {{player.name}}
                                     </div>
-                                    <div>12.3</div>
-                                    <div>227</div>
-                                </li>
-                                <li class="player-li">
-                                    <div>
-                                        <img src="../../assets/images/fantasy/white_shirt.webp">
-                                    </div>
-                                    <div>
-                                        Kane
-                                    </div>
-                                    <div>11.5</div>
-                                    <div>206</div>
-                                </li>
-                                <li class="player-li">
-                                    <div>
-                                        <img src="../../assets/images/fantasy/striped_red_shirt.webp">
-                                    </div>
-                                    <div>
-                                        Toney
-                                    </div>
-                                    <div>7.6</div>
-                                    <div>171</div>
+                                    <div>{{player.cost}}</div>
+                                    <div>{{player.rating}}</div>
                                 </li>
                             </ul>
                         </div>
