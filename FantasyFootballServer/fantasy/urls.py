@@ -8,8 +8,9 @@ from .views import *
 router = DefaultRouter()
 router.register("club", ClubViewSet)
 router.register("footballer", FootballerViewSet)
+
  
 urlpatterns = [ 
-    path('top/', getTopPlayers),
+    path('top', getTopPlayers),
     path('', include(router.urls)),
 ]
