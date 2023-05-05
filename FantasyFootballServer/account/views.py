@@ -7,6 +7,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
 from .serializers import UserSerializer
+from rest_framework import serializers
+from rest_framework import status
 from .models import UserData
 from fantasy.models import *
 import jwt, datetime
@@ -64,6 +66,21 @@ class UserView(APIView):
         serializer = UserSerializer(user)
         
         return JsonResponse(serializer.data)
+    
+    def delete(self, request, id=None):
+        token = request.COOKIES.get('jwt')
+
+        if not token:
+            raise AuthenticationFailed('Unauthenticated!')
+
+        try:
+            payload = jwt.decode(token, 'secret', algorithms=['HS256'])
+        except jwt.ExpiredSignatureError:
+            raise AuthenticationFailed('Unauthenticated!')
+        
+        user = UserData.objects.filter(id=payload['id']).first()
+        user.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
     
 def getProfile(request, s):
     top = UserData.objects.filter(name=s, is_active = True)
