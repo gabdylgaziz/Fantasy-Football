@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 from rest_framework.views import APIView
 from .serializers import UserSerializer
@@ -7,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
 from .serializers import UserSerializer
 from .models import UserData
+from fantasy.models import *
 import jwt, datetime
 
 class RegisterView(APIView):
@@ -47,7 +49,6 @@ class LoginView(APIView):
 
 
 class UserView(APIView):
-
     def get(self, request):
         token = request.COOKIES.get('jwt')
 
@@ -61,8 +62,21 @@ class UserView(APIView):
 
         user = UserData.objects.filter(id=payload['id']).first()
         serializer = UserSerializer(user)
-        return Response(serializer.data)
+        
+        return JsonResponse(serializer.data)
+    
+def getProfile(request, id):
+    top = UserData.objects.filter(id=id, is_active = True)
+    out = []
+    for query in top:
+        out.append({'id': query.id, 'name': query.name, 'score': query.score})
+    res = {
+        'user' : out
+    }
+    return JsonResponse(res)
 
+        
+        
 
 class LogoutView(APIView):
     def post(self, request):
