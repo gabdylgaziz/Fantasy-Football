@@ -122,3 +122,5 @@ class AccountDetail(APIView):
         
         serializer = UserSerializer(user, request.body)
         return JsonResponse(serializer.data)
+    
+    

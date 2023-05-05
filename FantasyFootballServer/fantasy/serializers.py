@@ -1,5 +1,6 @@
 from rest_framework import serializers 
 from .models import *
+from account.serializers import UserSerializer
         
 class TeamSerializer(serializers.Serializer):
     team_id = serializers.IntegerField() 
@@ -7,21 +8,10 @@ class TeamSerializer(serializers.Serializer):
     
     def create(self, validated_data):
         return TeamSerializer.objects.create(**validated_data)
-    
-class UserSerializer(serializers.Serializer):
-    name = serializers.CharField(max_length=40)
-    surname = serializers.CharField(max_length=40)
-    email = serializers.CharField(max_length=40)
-    age = serializers.FloatField()
-    gender = serializers.CharField(max_length=10)
-    team_id = TeamSerializer()
-    
-    def create(self, validated_data):
-        return UserSerializer.objects.create(**validated_data)
         
 class UserSquadSerializer(serializers.Serializer):
-    user_id = TeamSerializer()
-    user_team = serializers.JSONField(encoder=None)
+    user_id = UserSerializer()
+    user_team = serializers.CharField(max_length=150)
     
     def create(self, validated_data):
         return UserSquadSerializer.objects.create(**validated_data)

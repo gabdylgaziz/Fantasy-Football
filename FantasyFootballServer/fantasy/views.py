@@ -1,9 +1,13 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from rest_framework import viewsets
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from drf_spectacular.utils import extend_schema
 from django.views.generic.edit import CreateView
+from rest_framework.exceptions import AuthenticationFailed
+import jwt
+from django.views.decorators.csrf import csrf_exempt
 
 from .serializers import *
 from .models import *
@@ -81,6 +85,82 @@ def getFootballer(request, id):
     }
     return JsonResponse(res)
 
+def getSquads(request):
+    player = User_Squad.objects.all()
+    res = {
+        'Squads' : list(player.values())
+    }
+    return JsonResponse(res)
 
-
+@csrf_exempt
+def getOwnSquad(request):
+    token = request.COOKIES.get('jwt')
+    if not token:
+        raise AuthenticationFailed('Unauthenticated!')
+    try:
+        payload = jwt.decode(token, 'secret', algorithms=['HS256'])
+    except jwt.ExpiredSignatureError:
+        raise AuthenticationFailed('Unauthenticated!')
+    if request.method == "GET":
+        squad = User_Squad.objects.filter(user_id_id = payload['id'])
+        a = []
+        player = []
+        for q in squad:
+            a = q.user_team.split(',')
+        for i in a:
+            t = Footballer.objects.filter(id=int(i))
+            player.append(list(t.values()))
+        
+        res = {
+            'squad_players': player
+        }
+        return JsonResponse(res)
+        #squad = UserData.objects.filter(id=payload['id']).first()
+    elif request.method == "POST":
+        #print(request.POST)
+        serializer = UserSquadSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return JsonResponse({"Squad is succefully created":"ez"})
+    
+class Squad(APIView):
+    def get(self, request):
+        token = request.COOKIES.get('jwt')
+        if not token:
+            raise AuthenticationFailed('Unauthenticated!')
+        try:
+            payload = jwt.decode(token, 'secret', algorithms=['HS256'])
+        except jwt.ExpiredSignatureError:
+            raise AuthenticationFailed('Unauthenticated!')
+        squad = User_Squad.objects.filter(user_id_id = payload['id'])
+        a = []
+        player = []
+        for q in squad:
+            a = q.user_team.split(',')
+        for i in a:
+            t = Footballer.objects.filter(id=int(i))
+            player.append(list(t.values()))
+        
+        res = {
+            'squad_players': player
+        }
+        return JsonResponse(res)
+    def delete(self, request):
+        token = request.COOKIES.get('jwt')
+        if not token:
+            raise AuthenticationFailed('Unauthenticated!')
+        try:
+            payload = jwt.decode(token, 'secret', algorithms=['HS256'])
+        except jwt.ExpiredSignatureError:
+            raise AuthenticationFailed('Unauthenticated!')
+        squad = User_Squad.objects.filter(user_id_id = payload['id'])
+        squad.delete()
+        return JsonResponse({"Squad is succefully deleted":"ez"}, safe=False)
+    def post(self, request):
+        print(request.data)
+        serializer = UserSquadSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return JsonResponse(serializer.data)
+    
 
