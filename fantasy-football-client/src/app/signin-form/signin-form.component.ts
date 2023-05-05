@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {throwError} from 'rxjs';
 
 @Component({
   selector: 'app-signin-form',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./signin-form.component.css']
 })
 export class SigninFormComponent {
+  public user: any;
 
+ 
+  ngOnInit() {
+    this.user = {
+      username: '',
+      password: ''
+    };
+  }
+  
+  sign(){
+    console.log(this.user)
+  }
 }
