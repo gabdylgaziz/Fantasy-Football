@@ -12,5 +12,7 @@ router.register("footballer", FootballerViewSet)
  
 urlpatterns = [ 
     path('top', getTopPlayers),
+    path('club/<int:id>/', getClub),
+    path('footballer/<int:id>/', getFootballer),
     path('', include(router.urls)),
 ]

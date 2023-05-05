@@ -59,6 +59,28 @@ def getTopPlayers(request):
     }
     return JsonResponse(res)
 
+def getClub(request, id):
+    top = Club.objects.filter(id=id)
+    players = Footballer.objects.filter(club=id)
+    out = []
+    for query in top:
+        out.append({'id': query.id, 'name': query.name, 'country': query.country})
+    player = []
+    for p in players:
+            player.append({"id": p.id, "nick_name": p.nick_name, "jersy_number": p.jersy_number})
+    res = {
+        'Club' : out,
+        'Players' : player
+    }
+    return JsonResponse(res)
+
+def getFootballer(request, id):
+    player = Footballer.objects.filter(id=id)
+    res = {
+        'Players' : list(player.values())
+    }
+    return JsonResponse(res)
+
 
 
 

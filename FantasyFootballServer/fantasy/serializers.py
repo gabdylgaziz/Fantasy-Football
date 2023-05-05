@@ -25,24 +25,7 @@ class UserSquadSerializer(serializers.Serializer):
     
     def create(self, validated_data):
         return UserSquadSerializer.objects.create(**validated_data)
-        
-class UserScoreSerializer(serializers.Serializer):
-    user_id = UserSerializer()
-    score = serializers.IntegerField()
     
-    def create(self, validated_data):
-        return UserScoreSerializer.objects.create(**validated_data)
-
-    id = serializers.IntegerField()
-    player_id = serializers.IntegerField()
-    name = serializers.CharField(max_length=40)
-    price = serializers.FloatField()
-    strength = serializers.FloatField()
-    role = serializers.CharField(max_length=40)
-    
-    def create(self, validated_data):
-        return PlayerSerializer.objects.create(**validated_data)
-
 class UserModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
