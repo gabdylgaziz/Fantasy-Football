@@ -28,10 +28,10 @@ class UserManager(BaseUserManager):
 
 
 class UserData(AbstractUser):
-
     username = None
     name = models.CharField(max_length=100, unique=True)
     email = models.EmailField(max_length=100, unique=True)
+    score = models.IntegerField(default=0)
     date_joined = models.DateTimeField(auto_now_add=True)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)

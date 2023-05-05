@@ -10,9 +10,6 @@ router.register("club", ClubViewSet)
 router.register("footballer", FootballerViewSet)
  
 urlpatterns = [ 
-    path('main/', main),
-    path('fantasy/', include(router.urls)),
+    path('top/', getTopPlayers),
+    path('', include(router.urls)),
 ]
-
-#router.register("club", )
-#router.register("footballer", )

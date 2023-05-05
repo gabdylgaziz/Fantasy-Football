@@ -22,6 +22,6 @@ from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
-    path('main/', main),
+    path('fantasy/', include('fantasy.urls')),
     path('', include('fixtures_api.urls')),
 ]

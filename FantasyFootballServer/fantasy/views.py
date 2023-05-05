@@ -6,6 +6,7 @@ from drf_spectacular.utils import extend_schema
 
 from .serializers import *
 from .models import *
+from account.models import *
 
 
 # Create your views here.
@@ -22,13 +23,8 @@ class ClubViewSet(viewsets.ViewSet):
         selializer = ClubSerializer(self.queryset, many=True)
         return Response(selializer.data)
 
-
-
-
 class FootballerViewSet(viewsets.ViewSet):
-
     queryset = Footballer.objects.all()
-
     @extend_schema(responses=FootballerSerializer)
     def list(self, request):
         selializer = FootballerSerializer(self.queryset, many=True)
@@ -50,3 +46,15 @@ def player_list(request):
     }
 
     return JsonResponse(context)
+
+def getTopPlayers(request):
+    top = UserData.objects.filter(is_active=True).order_by('-score')
+    print(top)
+    out = []
+    for query in top:
+        out.append({'id': query.id, 'name': query.name, 'score': query.score})
+    res = {
+        'top' : out
+    }
+    
+    return JsonResponse(res)
