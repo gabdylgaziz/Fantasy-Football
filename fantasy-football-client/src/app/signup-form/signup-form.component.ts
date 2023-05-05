@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 
 @Component({
@@ -6,30 +6,36 @@ import { User } from '../user';
   templateUrl: './signup-form.component.html',
   styleUrls: ['./signup-form.component.css']
 })
-export class SignupFormComponent {
+export class SignupFormComponent implements OnInit  {
   sign: boolean;
-  user: User[];
+  public user: any;
   constructor() {
     this.sign = false;
-    this.user = [];
   }
 
   nextstep(){
     this.sign = true;
+    console.log(this.user)
   }
 
   prevstep(){
     this.sign = false;
   }
 
-  onSubmit(name: string,surname: string,email: string,password: string,date: string,){
-    console.log(name)
-    console.log(surname)
-    console.log(email)
-    console.log(password)
-    console.log(date)
-  }
 
+
+  ngOnInit() {
+    this.user = {
+      firstname: '',
+      lastname: '',
+      email: '',
+      password: '',
+      gender: '',
+      birth: 0,
+      country: '',
+      team: ''
+    }
+  }
 
 
 }

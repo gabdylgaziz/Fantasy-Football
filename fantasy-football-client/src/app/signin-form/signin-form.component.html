@@ -1,16 +1,16 @@
 <div class="signup">
     <div class="sign-form">
-        <form class="form">
+        <form class="form" [(ngModel)]="user">
             <div class="login-text">
                 <p>LOG-IN</p>
             </div>
             <div class="login-form">
                 <div class="name reg">
                     <div class="reg-text">E-MAIL/PHONE</div>
-                    <input type="text">
+                    <input type="text" [(ngModel)]="user.username">
                 </div>
                 <div class="name reg">
-                    <div class="reg-text">PASSWORD</div>
+                    <div class="reg-text"[(ngModel)]="user.password">PASSWORD</div>
                     <input type="password">
                 </div>
             </div>

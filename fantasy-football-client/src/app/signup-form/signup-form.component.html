@@ -7,52 +7,48 @@
             YOUR FAVOURITE TEAM
         </div>
     </div>
-    <div class="sign-form" >
-        <form class="form" *ngIf="!sign" (submit)="onSubmit(name.value, surname.value, email.value, password.value, date.value)">
+    <div class="sign-form">
+        <form class="form" *ngIf="!sign">
             <div class="name reg">
                 <div class="reg-text">FIRST NAME</div>
-                <input type="text" #name>
+                <input type="text" [(ngModel)]="user.firstname">
             </div>
             <div class="name reg">
                 <div class="reg-text">LAST NAME</div>
-                <input type="text" #surname>
+                <input type="text" [(ngModel)]="user.lastname">
             </div>
             <div class="name reg">
                 <div class="reg-text">E-MAIL/PHONE</div>
-                <input type="text" #email>
+                <input type="text" [(ngModel)]="user.email">
             </div>
             <div class="name reg">
                 <div class="reg-text">PASSWORD</div>
-                <input type="password" #password>
+                <input type="password" [(ngModel)]="user.password">
             </div>
             <div class="gender reg">
                 <div class="reg-text">GENDER</div>
                 <div class="genders">
                     <div class="g">
                         <label for="male">MALE</label>
-                        <input type="radio" name="gender" id="male" value="male" checked>
+                        <input type="radio" name="gender" id="male" value="male" [(ngModel)]="user.gender">
                     </div>
                     <div class="g">
                         <label for="female">FEMALE</label>
-                        <input type="radio" name="gender" id="female" value="female">
+                        <input type="radio" name="gender" id="female" value="female" [(ngModel)]="user.gender">
                     </div>
                     <div class="g">
                         <label for="other">OTHER</label>
-                        <input type="radio" name="gender" id="other" value="other">
-                    </div>
-                    <div class="g">
-                        <label for="other">KAIRAT NURTAS</label>
-                        <input type="radio" name="gender" id="other" value="other">
+                        <input type="radio" name="gender" id="other" value="other" [(ngModel)]="user.gender">
                     </div>
                 </div>
             </div>
             <div class="date reg">
                 <div class="reg-text">DATE OF BIRTH</div>
-                <input type="date" #date>
+                <input type="date" [(ngModel)]="user.birth">
             </div>
             <div class="country reg">
                 <div class="reg-text">COUNTRY</div>
-                <select class="form-select" id="country" name="country">
+                <select class="form-select" id="country" name="country" [(ngModel)]="user.country">
                     <option>select country</option>
                     <option value="AF">Afghanistan</option>
                     <option value="AX">Aland Islands</option>
@@ -312,7 +308,7 @@
         <form class="form" *ngIf="sign">
             <ul class="fav-teams">
                 <ul class="teams-row">
-                    <li><img src="../../assets/images/team-logos/liverpool.png"></li>
+                    <li><img src="../../assets/images/team-logos/liverpool.png" value="Liverpool" [(ngModel)]="user.team"></li>
                     <li><img src="../../assets/images/team-logos/manchester-united.png"></li>
                     <li><img src="../../assets/images/team-logos/woolver.png"></li>
                     <li><img src="../../assets/images/team-logos/aston.png"></li>
