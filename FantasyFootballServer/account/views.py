@@ -65,8 +65,8 @@ class UserView(APIView):
         
         return JsonResponse(serializer.data)
     
-def getProfile(request, id):
-    top = UserData.objects.filter(id=id, is_active = True)
+def getProfile(request, s):
+    top = UserData.objects.filter(name=s, is_active = True)
     out = []
     for query in top:
         out.append({'id': query.id, 'name': query.name, 'score': query.score})
