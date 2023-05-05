@@ -8,6 +8,7 @@ from rest_framework.exceptions import AuthenticationFailed
 from .serializers import UserSerializer
 from .models import UserData
 import jwt, datetime
+from django.http import JsonResponse
 
 class RegisterView(APIView):
     def post(self, request):
@@ -72,3 +73,25 @@ class LogoutView(APIView):
             'message': 'success'
         }
         return response
+    
+# class based views
+class AccountList(APIView):
+    def get(self, request):
+        users = UserData.objects.all()
+        return JsonResponse(UserSerializer(users, many=True).data, safe=False)
+
+class AccountDetail(APIView):
+    def get(self, request, id):
+        user = UserData.objects.get(id=id)
+        if user == None:
+            return JsonResponse({"error": "Such user doesn't exist"})
+        
+        return JsonResponse(UserSerializer(user).data)
+
+    def put(self,request, id):
+        user = UserData.objects.get(id=id)
+        if user == None:
+            return JsonResponse({"error": "Such user doesn't exist"})
+        
+        serializer = UserSerializer(user, request.body)
+        return JsonResponse(serializer.data)
