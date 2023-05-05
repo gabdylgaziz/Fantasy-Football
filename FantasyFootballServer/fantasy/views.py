@@ -41,3 +41,20 @@ class FootballerViewSet(viewsets.ViewSet):
     def list(self, request):
         selializer = FootballerSerializer(self.queryset, many=True)
         return Response(selializer.data)
+
+
+
+def player_list(request):
+    goalkeepers = Footballer.objects.filter(position='GK').values()
+    defenders = Footballer.objects.filter(position='DEF').values()
+    midfielders = Footballer.objects.filter(position='MID').values()
+    forwards = Footballer.objects.filter(position='FWD').values()
+
+    context = {
+        'goalkeepers': list(goalkeepers),
+        'defenders': list(defenders),
+        'midfielders': list(midfielders),
+        'forwards': list(forwards),
+    }
+
+    return JsonResponse(context)

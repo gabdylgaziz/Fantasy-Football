@@ -36,7 +36,12 @@ class Footballer(models.Model):
     last_name = models.CharField(max_length=100)
     nick_name = models.CharField(max_length=120)
     date_of_birth = models.DateField()
-    position = models.IntegerField(blank=True)
+    position = models.IntegerField(blank=True, choices=[
+        ('GK', 'Goalkeeper'),
+        ('DEF', 'Defender'),
+        ('MID', 'Midfielder'),
+        ('FWD', 'Forward'),
+    ])
     jersy_number = models.IntegerField(blank=True)
     market_value = models.IntegerField(blank=True)
     club = models.ForeignKey(Club, on_delete=models.CASCADE)
