@@ -33,7 +33,6 @@ class UserScoreSerializer(serializers.Serializer):
     def create(self, validated_data):
         return UserScoreSerializer.objects.create(**validated_data)
 
-class PlayerSerializer(serializers.Serializer):
     id = serializers.IntegerField()
     player_id = serializers.IntegerField()
     name = serializers.CharField(max_length=40)
@@ -77,12 +76,12 @@ class UserScoreModelSerializer(serializers.ModelSerializer):
                   'score'
                 )
 
-class PlayerModelSerializer(serializers.ModelSerializer):
+class ClubSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Player
-        fields = ('id',
-                  'player_id',
-                  'price',
-                  'strength',
-                  'role'
-                )
+        model = Club
+        fields = "__all__"
+
+class FootballerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Footballer
+        fields = "__all__"

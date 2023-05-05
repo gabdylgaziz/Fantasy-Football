@@ -21,5 +21,6 @@ from fantasy.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
+    path('api/', include('fantasy.urls')),
     path('main/', main)
 ]
