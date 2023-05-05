@@ -14,10 +14,6 @@ def main(request):
     return JsonResponse({'FIRST PAGE': 'HELLO WORLD'})
 
 class ClubViewSet(viewsets.ViewSet):
-    """
-
-    A simple viewset for viewing club
-    """
 
     queryset = Club.objects.all()
 
@@ -30,10 +26,6 @@ class ClubViewSet(viewsets.ViewSet):
 
 
 class FootballerViewSet(viewsets.ViewSet):
-    """
-
-    A simple viewset for viewing Foot baller
-    """
 
     queryset = Footballer.objects.all()
 
